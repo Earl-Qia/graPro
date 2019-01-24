@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>this is edit</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/js/img.js"></script>
+</head>
+<body>
+{include file="index/header"/}
+ <div class="main">
+        {include file="index/left"/}
+        <div class="right">
+            <form action="" method="post" enctype="multipart/form-data" >
+                <div>
+                    <ul class="value_ul">
+                        <li>名 称
+                            <input type="text" name="videoName" value="{$sq->videoName}">
+                            <input type="hidden" name="videoId" value="{$videoId}"/>
+                        </li>
+                        <li>
+                            <a href="" class="imgfile" title="选择图片">
+                            更换图片
+                                <input type="file" name="image" id="upfile" onchange="viewmypicOld(showimg,oldImg,this.form.upfile);" >
+                            </a>
+                            {/*原来的old_img*/}
+                            <img src="__IMG__/{$sq->videoCover}" id="oldImg" alt="暂无图像"onerror="this.src='__IMG__/moren.png';'this.onerror=null'" style="display:inline;" >
+                            {/*预览new_img*/}
+                            <img id="showimg" src="" style="display:none;" alt="预览图片" />
+                        </li>
+                        <li>
+                            视频链接
+                            <input type="text" name="videoLink" value="{$sq->videoLink}">
+                        </li>
+                        <li>
+                            视频介绍<input type="text" name="videoIntroduce" value="{$sq->videoIntroduce}">
+                        </li>
+                        <li>
+                            视频热度<input type="text" name="videoFabulous" value="{$sq->videoFabulous}">
+                        </li>
+                        <li>
+                            <input class="cb_put" type='submit' id='submit' value='修改'/><input class="cb_put" type="reset" value="重置">
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

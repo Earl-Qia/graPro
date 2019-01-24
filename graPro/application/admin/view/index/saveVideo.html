@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>this is edit</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/js/img.js"></script>
+    <!-- <script src="static/js/video.js"></script> -->
+</head>
+<body>
+{include file="index/header"/}
+ <div class="main">
+        {include file="index/left"/}
+        <div class="right">
+            <form action="" method="post" enctype="multipart/form-data" >
+                <div>
+                    <ul class="value_ul">
+                        <li>
+                            名 称
+                            <input type="text" name="videoName" outofocus required>
+                        </li>
+                        <li>
+                            <a href="" class="imgfile" title="选择图片">封面图片
+                                <input type="file" name="image" id="upfile" onchange="viewmypic(showimg,this.form.upfile);">
+                            </a>
+                            <img name="showimg" id="showimg" src="" style="display:none;" alt="预览图片" />
+                        </li>
+                        <li>
+                            <a href="" class="imgfile" title="上传视频">上传视频
+                                <input type="file" name="videoFile" id="videoFile"/>
+                            </a>
+                        </li>
+                        <li>
+                            视频介绍<input type="text" name="videoIntroduce" required>
+                        </li>
+                        <li>
+                            视频热度<input type="text" name="videoFabulous" required>
+                        </li>
+                        <li>
+                            <input class="cb_put" type='submit' id='submit' value='添加'/>
+                            <input class="cb_put" type="reset" value="重置">
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

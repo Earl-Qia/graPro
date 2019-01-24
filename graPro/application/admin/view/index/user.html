@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>后台首页</title>
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+    {include file="index/header"/}
+    <div class="main">
+        {include file="index/left"/}
+        <div class="right">
+            <form action="" method="post" >
+                <div>
+                    <ul class="value_ul">
+                        <li id="value_header">
+                            <div id="cb"></div>
+                            <div>编 号</div>
+                            <div>姓名</div>
+                            <div>密码</div>
+                            <div>邮箱</div>
+                            <div>专业</div>
+                            <div>职位</div>
+                            <div>权限</div>
+                            <div></div>
+                        </li>
+                        {volist name='list' id='user'}
+                        <li>
+                            <div id="cb">
+                                <input id="ckbox" type='checkbox' name='iss[]' value='{$user.userId}'/>
+                            </div>
+                            <div>{$user.userId}</div>
+                            <div>{$user.name}</div>
+                            <div>{$user.password}</div>
+                            <div>{$user.email}</div>
+                            <div>{$user.major}</div>
+                            <div>{$user.position}</div>
+                            <div>{$user.jurisdiction}</div>
+                            <div>
+                               <a href="?e=1&i={$user.userId}" title="删除">删除</a>
+                               <a href="?e=2&i={$user.userId}" title="编辑">编辑</a>
+                            </div>
+                        </li>
+                        {/volist}
+                        <li id="cb_li">
+                            <a class="cb_put" href="?e=3" title="添加">添加数据</a>
+                            <input class="cb_put" type='submit' id='submit' value='批量删除'/>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            {$list->render()}
+        </div>
+    </div>
+</body>
+</html>

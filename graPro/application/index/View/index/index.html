@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>index</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/main_detail.css">
+</head>
+<body>
+    {include file="index/header"/}
+    <div class="main_detail">
+        {/*轮播导航*/}
+        {include file="index/navigation"/}
+        <div class="links">
+            <hr>
+            <p class="types-title">
+                <span></span>
+                    实/战/推/荐
+                <span></span>
+            </p>
+        </div>
+        {volist name='list' id='video'}
+        <div class="Interactives">
+            <div class="inter_Windows">
+                <a href="?a=play&link={$video.videoLink}">
+                    <img src="__IMG__/{$video.videoCover}"  width="100%" height="58%"  alt="暂无图像" onerror="this.src='__IMG__/moren.png';'this.onerror=null'"/>
+                </a>
+                {$video.videoIntroduce}
+                <div class="i">
+                {$video.videoLink}
+                    <a href="?a=play&link={$video.videoLink}">{$video.videoClass}</a>
+                </div>
+            </div>
+        </div>
+        {/volist}
+        <br>
+        <div>
+            <!-- page分页 -->
+            <!-- {$list->render()} -->
+        </div>
+    </div>
+    {/*底部栏开始*/}
+    {include file="index/footer"/}
+
+    <a href=""></a>
+</body>
+</html>

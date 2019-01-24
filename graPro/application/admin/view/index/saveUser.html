@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>this is save</title>
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+{include file="index/header"/}
+ <div class="main">
+        {include file="index/left"/}
+        <div class="right">
+            <form action="" method="post" >
+                <div>
+                    <ul class="value_ul">
+                        <li>姓 名
+                            <input type="text" name="name" outofocus required>
+                        </li>
+                        <li>
+                            密 码 <input type="password" name="password" required>
+                        </li>
+                        <li>
+                            邮 箱<input type="email" name="email" required>
+                        </li>
+                        <li>
+                            专 业<input type="text" name="major" required>
+                        </li>
+                        <li>
+                            职 位<input type="text" name="position" required>
+                        </li>
+                        <li>
+                            权 限<input type="text" name="jurisdiction" required>
+                        </li>
+                        <li>
+                            <input class="cb_put" type='submit' id='submit' value='添加'/>
+                            <input class="cb_put" type="reset" value="重置">
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

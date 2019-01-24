@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>后台首页</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/js/mask.js"></script>
+</head>
+<body>
+    {include file="index/header"/}
+    <div class="main">
+        {include file="index/left"/}
+        <div class="right">
+            <form action="" method="post" >
+                <div>
+                    <ul class="value_ul">
+                        <li id="value_header">
+                            <div id="cb"></div>
+                            <div>编 号</div>
+                            <div>名 称</div>
+                            <div>封 面</div>
+                            <div>视频地址</div>
+                            <div>视频介绍</div>
+                            <div>视频热度</div>
+                            <div>编 辑</div>
+                        </li>
+                        {volist name='list' id='video'}
+                        <li>
+                            <div id="cb">
+                                <input id="ckbox" type='checkbox' name='iss[]' value='{$video.videoId}'/>
+                            </div>
+                            <div>{$video.videoId}</div>
+                            <div>{$video.videoName}</div>
+                            <div>
+                                <img src="__IMG__/{$video.videoCover}" alt="暂无图像" onerror="this.src='__IMG__/moren.png';'this.onerror=null'" onclick="showmask('{$video.videoLink}')">
+                            </div>
+                            <div>
+                                <a href="?vlink={$video.videoLink}">
+                                  {$video.videoLink}
+                                </a>
+                            </div>
+                            <div>{$video.videoIntroduce}</div>
+                            <div>{$video.videoFabulous}</div>
+                            <div>
+                               <a href="?e=1&i={$video.videoId}">删除</a>
+                               <a href="?e=2&i={$video.videoId}">编辑</a>
+                            </div>
+                        </li>
+                        {/volist}
+                        <li id="cb_li">
+                            <a class="cb_put" href="?e=3" title="添加">添加数据</a>
+                            <input class="cb_put" type='submit' id='submit' value='批量删除'/>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            {$list->render()}
+        </div>
+    </div>
+</body>
+</html>
